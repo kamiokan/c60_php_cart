@@ -1,0 +1,52 @@
+CREATE TABLE mst_staff (
+  code INT AUTO_INCREMENT,
+  name VARCHAR(15),
+  password VARCHAR(32),
+  PRIMARY KEY (code)
+);
+
+CREATE TABLE mst_product (
+  code INT AUTO_INCREMENT,
+  name VARCHAR(30),
+  price INT,
+  gazou VARCHAR(30),
+  PRIMARY KEY (code)
+);
+
+CREATE TABLE dat_sales (
+  code INT AUTO_INCREMENT,
+  date TIMESTAMP,
+  code_member INT,
+  name VARCHAR(15),
+  email VARCHAR(50),
+  zip VARCHAR(7),
+  address VARCHAR(50),
+  tel VARCHAR(13),
+  PRIMARY KEY (code)
+);
+
+CREATE TABLE dat_sales_product (
+  code INT AUTO_INCREMENT,
+  code_sales INT,
+  code_product INT,
+  price INT,
+  quantity INT,
+  PRIMARY KEY (code)
+);
+
+CREATE TABLE dat_member (
+  code INT AUTO_INCREMENT,
+  date TIMESTAMP,
+  password VARCHAR(32),
+  name VARCHAR(15),
+  email VARCHAR(50),
+  zip VARCHAR(7),
+  address VARCHAR(50),
+  tel VARCHAR(13),
+  danjo INT,
+  born INT,
+  PRIMARY KEY (code)
+);
+
+# コード：1,パスワード：password で登録
+INSERT INTO `mst_staff` (`code`, `name`, `password`) VALUES (1, '管理者', '5f4dcc3b5aa765d61d8327deb882cf99');
